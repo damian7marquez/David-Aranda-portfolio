@@ -276,4 +276,7 @@ p {
         font-size: 0.9rem;
     }
 }
+.page-content {
+    padding-bottom: 100px; /* space for bottom nav */
+}
 
