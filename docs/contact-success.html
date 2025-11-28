@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Message Sent — Thank You!</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        .success-container {
+            text-align: center;
+            margin-top: 80px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .success-card {
+            background: var(--white);
+            padding: 30px;
+            max-width: 600px;
+            margin: auto;
+            border-radius: var(--radius);
+            border: 1px solid #ddd;
+            box-shadow: var(--shadow);
+        }
+
+        .success-icon {
+            font-size: 60px;
+            color: var(--blue);
+            margin-bottom: 10px;
+        }
+
+        .success-title {
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .success-message {
+            font-size: 1rem;
+            color: var(--gray-text);
+            margin-bottom: 25px;
+        }
+
+        .success-buttons a {
+            display: inline-block;
+            padding: 12px 20px;
+            margin: 10px;
+            background: var(--blue);
+            color: white;
+            border-radius: var(--radius);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .success-buttons a:hover {
+            background: var(--dark-blue);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="page-content">
+    <div class="container">
+
+        <div class="success-container">
+
+            <div class="success-card">
+
+                <div class="success-icon">✔️</div>
+
+                <div class="success-title">Message Sent Successfully!</div>
+
+                <p class="success-message">
+                    Thank you for reaching out — I will get back to you shortly.
+                </p>
+
+                <div class="success-buttons">
+                    <a href="index.html">Return to Home</a>
+                    <a href="timeline.html">View Projects</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<footer class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="timeline.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</footer>
+
+</body>
+</html>

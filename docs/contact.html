@@ -2,33 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Contact David Aranda</title>
+    <title>Contact — David Aranda</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<div class="container">
-    <h1>Contact Me</h1>
-    <p>
-        If you have internship opportunities, job offers, collaboration ideas, or questions 
-        about my engineering projects — feel free to reach out. I respond quickly.
-    </p>
+<div class="page-content">
+    <div class="container">
 
-    <form action="https://formsubmit.co/davidaranda1029@gmail.com" method="POST" class="contact-form">
+        <h1>Contact Me</h1>
+        <p>
+            If you have internship opportunities, job offers, collaboration ideas, or questions 
+            about my engineering projects — feel free to reach out. I respond quickly.
+        </p>
 
-        <input type="text" name="name" placeholder="Your Name" required>
+        <form action="https://formsubmit.co/davidaranda1029@gmail.com"
+              method="POST"
+              class="contact-form">
 
-        <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="name" placeholder="Your Name" required>
 
-        <textarea name="message" rows="6" placeholder="Type your message…" required></textarea>
+            <input type="email" name="email" placeholder="Your Email" required>
 
-        <button type="submit">Send Message</button>
+            <textarea name="message" rows="6" placeholder="Type your message…" required></textarea>
 
-        <!-- FormSubmit options -->
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="https://damian7marquez.github.io/David-Aranda-portfolio/contact-success.html">
-    </form>
+            <button type="submit">Send Message</button>
+
+            <!-- FormSubmit Settings -->
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_template" value="box">
+            <input type="hidden" name="_next" value="https://damian7marquez.github.io/David-Aranda-portfolio/contact-success.html">
+        </form>
+
+    </div>
 </div>
 
 <footer class="bottom-nav">
@@ -39,8 +46,3 @@
 
 </body>
 </html>
-<footer class="bottom-nav">
-    <a href="index.html">Home</a>
-    <a href="timeline.html">Projects</a>
-    <a href="contact.html">Contact</a>
-</footer>
