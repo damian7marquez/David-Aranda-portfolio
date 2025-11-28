@@ -1,18 +1,15 @@
 /* =======================================
-   MIXED RETRO TERMINAL THEME (Purple + Neon)
+   MIXED RETRO TERMINAL THEME
 =========================================== */
 
 :root {
-    /* Background + glow */
     --background: #0a0a0f;
     --grid-color: rgba(0, 255, 180, 0.08);
 
-    /* Mixed retro colors */
-    --primary-color: #9d4bff;   /* Purple */
-    --accent-color: #4BC0C8;    /* Cyan/Blue */
+    --primary-color: #9d4bff;
+    --accent-color: #4BC0C8;
     --neon-green: #00ff9f;
 
-    /* Text glow */
     --text-glow: 0 0 7px #9d4bff, 0 0 12px #4BC0C8;
 
     --card-bg: #111;
@@ -20,17 +17,11 @@
     --font-main: 'Courier New', monospace;
 }
 
-/* =======================================
-   GLOBAL + BACKGROUND GRID
-=========================================== */
-
 body {
     margin: 0;
     font-family: var(--font-main);
     background: var(--background);
     color: var(--accent-color);
-
-    /* Subtle PCB/terminal grid */
     background-image:
         linear-gradient(var(--grid-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
@@ -43,7 +34,6 @@ body {
     padding: 35px;
 }
 
-/* Headers */
 h1, h2, h3 {
     color: var(--primary-color);
     text-shadow: var(--text-glow);
@@ -55,15 +45,11 @@ h1, h2, h3 {
     margin-bottom: 20px;
 }
 
-/* Section spacing */
 .section {
     margin-top: 40px;
 }
 
-/* =======================================
-   PROJECT CARDS
-=========================================== */
-
+/* CARDS */
 .card {
     display: block;
     background: var(--card-bg);
