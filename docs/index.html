@@ -2,109 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>David Aranda — Portfolio</title>
+    <title>David Aranda — Electrical Engineering Student</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <style>
-        .typing-container {
-            font-size: 2.3rem;
-            font-weight: 700;
-            color: var(--dark-blue);
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: 3px solid var(--dark-blue);
-            width: 0;
-            animation: typing 3s steps(40, end) forwards,
-                       blink 0.7s infinite;
-        }
-
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes blink {
-            50% { border-color: transparent; }
-        }
-    </style>
 </head>
 
 <body>
 
-<!-- HERO SECTION -->
-<div class="hero container">
-    <div class="typing-container">
-        David Aranda — Electrical Engineering Student
+<!-- TOP NAV -->
+<div class="top-nav">
+    <div class="nav-left">
+        <div class="logo">DA</div>
+        <div class="nav-name">David Aranda</div>
     </div>
 
-    <p class="tagline">
-        Embedded Systems • Electronics • PCB Design
-    </p>
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="timeline.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="container page-content">
 
-    <div class="section">
-        <h3>About Me</h3>
-        <p>
-            I am an Electrical Engineering student focusing on embedded systems, electronics,
-            PCB design, and low-level programming. This site documents my engineering projects,
-            prototypes, and hands-on builds.
-        </p>
+    <div class="hero">
+        <h1>Electrical Engineering Student</h1>
+        <p class="tagline">Embedded Systems • Electronics • PCB Design</p>
     </div>
 
-    <input type="text" id="searchBar" placeholder="Search projects…" class="search-input">
+    <input type="text" class="search-input" placeholder="Search projects…">
 
-    <script>
-        const searchBar = document.getElementById('searchBar');
-        searchBar.addEventListener('keyup', function () {
-            let value = searchBar.value.toLowerCase();
-            document.querySelectorAll('.card').forEach(card => {
-                card.style.display = card.innerText.toLowerCase().includes(value)
-                    ? "block"
-                    : "none";
-            });
-        });
-    </script>
+    <h2>Project Categories</h2>
 
-    <div class="section">
-        <h3>Project Categories</h3>
+    <a class="card" href="embedded.html">
+        <span class="card-title">Embedded Systems</span>
+        <span class="card-desc">Microcontrollers • C firmware • ESP32 • STM32</span>
+    </a>
 
-        <a class="card" href="embedded.html">
-            <span class="card-title">Embedded Systems</span>
-            <span class="card-desc">Microcontrollers, C firmware, ESP32, STM32</span>
-        </a>
+    <a class="card" href="electronics.html">
+        <span class="card-title">Electronics</span>
+        <span class="card-desc">Circuits • Sensors • Power Systems</span>
+    </a>
 
-        <a class="card" href="electronics.html">
-            <span class="card-title">Electronics</span>
-            <span class="card-desc">Circuits, sensors, power systems</span>
-        </a>
+    <a class="card" href="pcb.html">
+        <span class="card-title">PCB Design</span>
+        <span class="card-desc">KiCad • Routing • Schematics</span>
+    </a>
 
-        <a class="card" href="pcb.html">
-            <span class="card-title">PCB Design</span>
-            <span class="card-desc">KiCad boards, routing, layout</span>
-        </a>
-
-        <a class="card" href="timeline.html">
-            <span class="card-title">Project Timeline</span>
-            <span class="card-desc">Reverse-chronological showcase</span>
-        </a>
-    </div>
-
-</div>
-
-<!-- BOTTOM NAVIGATION -->
-<footer class="bottom-nav">
-    <a href="index.html">Home</a>
-    <a href="timeline.html">Projects</a>
-    <a href="contact.html">Contact</a>
-</footer>
-
-</body>
-</html>
-<footer class="bottom-nav">
-    <a href="index.html">Home</a>
-    <a href="timeline.html">Projects</a>
-    <a href="contact.html">Contact</a>
-</footer>
+    <a class="card" href="timeline.html">
+        <span class="card-title">Project Timeline</span>
+        <span class="card

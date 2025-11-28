@@ -2,139 +2,86 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project Template — David Aranda</title>
-    <link rel="stylesheet" href="../css/style.css">
-
-    <style>
-        .project-header {
-            margin-bottom: 25px;
-        }
-
-        .project-title {
-            font-size: 2rem;
-            color: var(--dark-blue);
-            font-weight: 700;
-            margin-bottom: 5px;
-        }
-
-        .project-date {
-            color: var(--gray-text);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .project-tags span {
-            background: var(--blue);
-            color: white;
-            padding: 6px 10px;
-            border-radius: 8px;
-            margin-right: 8px;
-            font-size: 0.85rem;
-        }
-
-        /* Image Gallery */
-        .gallery {
-            margin: 20px 0;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .gallery img {
-            width: 300px;
-            border-radius: var(--radius);
-            border: 1px solid #ddd;
-            box-shadow: var(--shadow-light);
-        }
-
-        /* Section headers */
-        h3 {
-            margin-top: 30px;
-            color: var(--dark-blue);
-        }
-
-        /* Back Button */
-        .back-btn {
-            display: inline-block;
-            margin-top: 25px;
-            padding: 12px 18px;
-            background: var(--blue);
-            color: white;
-            text-decoration: none;
-            border-radius: var(--radius);
-            font-weight: bold;
-            transition: var(--transition);
-        }
-
-        .back-btn:hover {
-            background: var(--dark-blue);
-        }
-    </style>
+    <title>Project Timeline — David Aranda</title>
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
 
-<div class="page-content">
-    <div class="container">
+<!-- TOP NAV -->
+<div class="top-nav">
+    <div class="nav-left">
+        <div class="logo">DA</div>
+        <div class="nav-name">David Aranda</div>
+    </div>
 
-        <!-- ===== PROJECT HEADER ===== -->
-        <div class="project-header">
-            <div class="project-title">Project Title Here</div>
-
-            <span class="project-date">January 10, 2025</span>
-
-            <div class="project-tags">
-                <span>ESP32</span>
-                <span>C Programming</span>
-                <span>KiCad</span>
-                <!-- Add more tags as needed -->
-            </div>
-        </div>
-
-        <!-- ===== PROJECT DESCRIPTION ===== -->
-        <h3>Description</h3>
-        <p>
-            Write a strong paragraph about what the project does, why you built it,
-            what skills you used, and the final outcome. 
-        </p>
-
-        <!-- ===== IMAGE GALLERY ===== -->
-        <h3>Images</h3>
-        <div class="gallery">
-            <img src="pic1.jpg" alt="Project Image 1">
-            <img src="pic2.jpg" alt="Project Image 2">
-            <!-- Add more images as needed -->
-        </div>
-
-        <!-- ===== SECTIONS ===== -->
-        <h3>Goals</h3>
-        <ul>
-            <li>Explain your objectives and what you wanted to learn.</li>
-            <li>Describe your engineering focus (firmware, PCB, analog, etc.)</li>
-        </ul>
-
-        <h3>Challenges</h3>
-        <ul>
-            <li>Explain problems you ran into and how you solved them.</li>
-            <li>Talk about debugging, design decisions, constraints, etc.</li>
-        </ul>
-
-        <h3>Lessons Learned</h3>
-        <ul>
-            <li>What you learned from the project.</li>
-            <li>What you would improve in the next revision.</li>
-        </ul>
-
-        <!-- BACK BUTTON -->
-        <a href="../../timeline.html" class="back-btn">← Back to Timeline</a>
-
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="timeline.html">Projects</a>
+        <a href="contact.html">Contact</a>
     </div>
 </div>
 
+<!-- MAIN CONTENT -->
+<div class="container page-content">
+
+    <h1>Project Timeline</h1>
+    <p>This page shows all engineering projects in reverse-chronological order.</p>
+
+    <!-- ============================
+         YEAR 2025
+    ================================ -->
+    <h2 class="year-title">2025</h2>
+
+    <a class="card" href="assets/projects/project-template.html">
+        <span class="card-title">Solar-Powered ESP32 Sensor Node</span>
+        <span class="card-desc">ESP32 • Power Systems • PCB • IoT</span>
+    </a>
+
+    <a class="card" href="assets/projects/project-template.html">
+        <span class="card-title">Motor Driver PCB — H-Bridge Design</span>
+        <span class="card-desc">KiCad • MOSFETs • Embedded Control</span>
+    </a>
+
+    <a class="card" href="assets/projects/project-template.html">
+        <span class="card-title">C-Language Microcontroller Algorithms</span>
+        <span class="card-desc">C Programming • State Machines • Timers</span>
+    </a>
+
+
+    <!-- ============================
+         YEAR 2024
+    ================================ -->
+    <h2 class="year-title">2024</h2>
+
+    <a class="card" href="assets/projects/project-template.html">
+        <span class="card-title">Signal Processing Toolkit</span>
+        <span class="card-desc">Filters • FFT • MATLAB</span>
+    </a>
+
+    <a class="card" href="assets/projects/project-template.html">
+        <span class="card-title">Beginner PCB Boards</span>
+        <span class="card-desc">KiCad • Routing • Schematic Design</span>
+    </a>
+
+
+    <!-- ============================
+         YEAR 2023
+    ================================ -->
+    <h2 class="year-title">2023</h2>
+
+    <a class="card" href="assets/projects/project-template.html">
+        <span class="card-title">Arduino Robotics Experiments</span>
+        <span class="card-desc">Servo Control • Sensors • Prototyping</span>
+    </a>
+
+</div>
+
+<!-- BOTTOM NAV -->
 <footer class="bottom-nav">
-    <a href="../../index.html">Home</a>
-    <a href="../../timeline.html">Projects</a>
-    <a href="../../contact.html">Contact</a>
+    <a href="index.html">Home</a>
+    <a href="timeline.html">Projects</a>
+    <a href="contact.html">Contact</a>
 </footer>
 
 </body>
