@@ -3,28 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>David Aranda — Portfolio</title>
-
-    <!-- LinkedIn Theme Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
 
     <!-- Typing Animation -->
     <style>
         .typing-container {
-            font-size: 1.8rem;
+            font-size: 2.3rem;
+            font-weight: 700;
             color: var(--dark-blue);
-            font-weight: bold;
             white-space: nowrap;
             overflow: hidden;
-            border-right: 2px solid var(--dark-blue);
+            border-right: 3px solid var(--dark-blue);
             width: 0;
             animation: typing 3s steps(40, end) forwards,
                        blink 0.7s infinite;
-            margin-bottom: 10px;
         }
 
         @keyframes typing {
             from { width: 0; }
-            to { width: 480px; }
+            to { width: 100%; }
         }
 
         @keyframes blink {
@@ -35,26 +32,49 @@
 
 <body>
 
-<div class="container">
-
-    <!-- Typing Title -->
-    <div class="typing-container">
-        > David Aranda — Electrical Engineering Student
+<!-- =========================
+       TOP NAVIGATION BAR
+========================= -->
+<nav class="top-nav">
+    <div class="nav-left">
+        <span class="logo">DA</span>
+        <span class="nav-name">David Aranda</span>
     </div>
 
-    <!-- Tagline -->
+    <div class="nav-right">
+        <a href="index.html">Home</a>
+        <a href="timeline.html">Projects</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+
+<!-- =========================
+         HERO SECTION
+========================= -->
+<div class="hero container">
+
+    <div class="typing-container">
+        David Aranda — Electrical Engineering Student
+    </div>
+
     <p class="tagline">
         Embedded Systems • Electronics • PCB Design
     </p>
 
+</div>
 
-    <!-- About Me -->
+
+<!-- =========================
+          ABOUT ME
+========================= -->
+<div class="container">
     <div class="section">
         <h3>About Me</h3>
         <p>
-            I am an Electrical Engineering student focusing on embedded systems, electronics, PCB design,
-            and low-level programming. This site documents my engineering projects, prototypes, and
-            hands-on builds.
+            I am an Electrical Engineering student focusing on embedded systems, electronics,
+            PCB design, and low-level programming. This site documents my engineering projects,
+            prototypes, and hands-on builds.
         </p>
     </div>
 
@@ -98,10 +118,12 @@
             <span class="card-desc">Reverse-chronological showcase</span>
         </a>
     </div>
-
 </div>
 
-<!-- Bottom Navigation -->
+
+<!-- =========================
+        BOTTOM NAVIGATION
+========================= -->
 <footer class="bottom-nav">
     <a href="index.html">Home</a>
     <a href="timeline.html">Projects</a>
@@ -110,4 +132,3 @@
 
 </body>
 </html>
-

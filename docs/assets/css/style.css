@@ -1,91 +1,187 @@
+/* =======================================
+   LINKEDIN BLUE PORTFOLIO THEME — DAVID ARANDA
+========================================== */
+
 :root {
-    --blue: #0A66C2;       /* LinkedIn blue */
-    --dark-blue: #004182;
-    --light-bg: #F3F2EF;
-    --text-dark: #1A1A1A;
+    --blue: #0A66C2;            /* LinkedIn Blue */
+    --dark-blue: #004182;       /* Darker Blue */
+    --light-bg: #F3F2EF;        /* Neutral Background */
     --white: #ffffff;
+    --gray-text: #555;
+    --text-dark: #1A1A1A;
 
     --radius: 12px;
+    --shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    --shadow-light: 0px 2px 6px rgba(0,0,0,0.06);
+
+    --transition: 0.25s ease;
 }
 
-/* General page styling */
+
+/* =======================================
+   GLOBAL PAGE STYLES
+========================================== */
+
 body {
     margin: 0;
-    font-family: "Segoe UI", sans-serif;
     background: var(--light-bg);
+    font-family: "Segoe UI", sans-serif;
     color: var(--text-dark);
 }
 
-/* Container */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 20px;
 }
 
-/* Page titles */
 h1, h2, h3 {
     color: var(--dark-blue);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
-/* Tagline */
-.tagline {
+p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+
+/* =======================================
+   TOP NAVIGATION BAR
+========================================== */
+
+.top-nav {
+    width: 100%;
+    background: var(--white);
+    border-bottom: 1px solid #ddd;
+    padding: 12px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: var(--shadow-light);
+    z-index: 100;
+}
+
+/* Left side (Logo + Name) */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 34px;
+    height: 34px;
+    background: var(--blue);
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+/* Right side links */
+.nav-right a {
+    margin-left: 20px;
+    text-decoration: none;
     color: var(--blue);
+    font-weight: 600;
+    transition: var(--transition);
 }
 
-/* Card styling */
+.nav-right a:hover {
+    color: var(--dark-blue);
+}
+
+
+/* =======================================
+   HERO SECTION
+========================================== */
+
+.hero {
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
+
+.tagline {
+    font-size: 1.1rem;
+    color: var(--blue);
+    margin-top: 10px;
+}
+
+
+/* =======================================
+   SEARCH BAR
+========================================== */
+
+.search-input {
+    width: 100%;
+    padding: 14px;
+    border-radius: var(--radius);
+    border: 1px solid #c7c7c7;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: 1rem;
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--blue);
+    box-shadow: 0px 0px 4px rgba(10,102,194,0.3);
+}
+
+
+/* =======================================
+   PROJECT CARDS
+========================================== */
+
 .card {
     display: block;
     background: var(--white);
-    border: 1px solid #d9d9d9;
-    padding: 15px;
+    padding: 18px;
     border-radius: var(--radius);
-    margin: 15px 0;
+    border: 1px solid #ddd;
+    margin: 14px 0;
     text-decoration: none;
     color: var(--text-dark);
-    transition: 0.2s;
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
 }
 
 .card:hover {
     transform: translateX(6px);
-    box-shadow: 0px 4px 14px rgba(0,0,0,0.15);
     border-color: var(--blue);
+    box-shadow: var(--shadow);
 }
 
-/* Bottom Navigation */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: var(--white);
-    border-top: 1px solid #ccc;
-    padding: 12px;
-    text-align: center;
-}
-
-.bottom-nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: var(--blue);
-    font-weight: bold;
-}
-
-.bottom-nav a:hover {
+.card-title {
+    display: block;
+    font-size: 1.2rem;
     color: var(--dark-blue);
+    font-weight: 600;
 }
 
-/* Search bar */
-.search-input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border-radius: var(--radius);
-    border: 1px solid #c7c7c7;
+.card-desc {
+    display: block;
+    margin-top: 6px;
+    color: var(--gray-text);
+    font-size: 0.95rem;
 }
 
-/* Contact Form */
+
+/* =======================================
+   CONTACT FORM
+========================================== */
+
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -93,19 +189,91 @@ h1, h2, h3 {
     border-radius: var(--radius);
     border: 1px solid #ccc;
     margin: 10px 0;
+    font-size: 1rem;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--blue);
+    box-shadow: 0px 0px 5px rgba(10,102,194,0.2);
 }
 
 .contact-form button {
     width: 100%;
     background: var(--blue);
-    color: white;
     border: none;
+    margin-top: 10px;
     padding: 14px;
-    font-size: 1rem;
     border-radius: var(--radius);
+    color: white;
+    font-size: 1.1rem;
     cursor: pointer;
+    transition: var(--transition);
 }
 
 .contact-form button:hover {
     background: var(--dark-blue);
 }
+
+
+/* =======================================
+   BOTTOM NAVIGATION
+========================================== */
+
+.bottom-nav {
+    width: 100%;
+    background: var(--white);
+    border-top: 1px solid #ccc;
+    text-align: center;
+    padding: 14px 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: var(--shadow-light);
+}
+
+.bottom-nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.bottom-nav a:hover {
+    color: var(--dark-blue);
+}
+
+
+/* =======================================
+   RESPONSIVE (PHONE)
+========================================== */
+
+@media (max-width: 600px) {
+    .top-nav {
+        padding: 10px 15px;
+    }
+
+    .nav-right a {
+        margin-left: 12px;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
+    .typing-container {
+        font-size: 1.6rem !important;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .bottom-nav {
+        font-size: 0.9rem;
+    }
+}
+
