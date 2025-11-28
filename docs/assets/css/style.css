@@ -1,73 +1,111 @@
-/* Retro Terminal Theme */
 :root {
-    --primary-color: #00ff6a;
-    --secondary-color: #00c8ff;
-    --accent-color: #9d7cff;
+    --blue: #0A66C2;       /* LinkedIn blue */
+    --dark-blue: #004182;
+    --light-bg: #F3F2EF;
+    --text-dark: #1A1A1A;
+    --white: #ffffff;
+
+    --radius: 12px;
 }
 
+/* General page styling */
 body {
-    background-color: #000;
-    color: var(--primary-color);
-    font-family: "Courier New", monospace;
     margin: 0;
-    padding: 20px;
+    font-family: "Segoe UI", sans-serif;
+    background: var(--light-bg);
+    color: var(--text-dark);
 }
 
-.terminal {
+/* Container */
+.container {
     max-width: 900px;
     margin: auto;
-    background: #000;
     padding: 20px;
-    border: 2px solid var(--primary-color);
-    box-shadow: 0 0 20px var(--primary-color);
 }
 
-.header h1 {
-    color: var(--primary-color);
-    font-size: 2.2rem;
-}
-
-.header h2 {
-    color: var(--secondary-color);
-    font-size: 1.4rem;
-}
-
-.tagline {
-    color: var(--accent-color);
-    font-size: 1rem;
-}
-
-.section {
-    margin-top: 30px;
-}
-
-.section h3 {
-    color: var(--primary-color);
+/* Page titles */
+h1, h2, h3 {
+    color: var(--dark-blue);
     margin-bottom: 10px;
 }
 
+/* Tagline */
+.tagline {
+    color: var(--blue);
+}
+
+/* Card styling */
 .card {
     display: block;
-    border: 1px solid var(--secondary-color);
+    background: var(--white);
+    border: 1px solid #d9d9d9;
     padding: 15px;
-    margin: 10px 0;
-    color: var(--secondary-color);
+    border-radius: var(--radius);
+    margin: 15px 0;
     text-decoration: none;
-    background: rgba(0, 200, 255, 0.1);
-    transition: background 0.3s, transform 0.3s;
+    color: var(--text-dark);
+    transition: 0.2s;
 }
 
 .card:hover {
-    background: rgba(0, 255, 106, 0.2);
-    transform: translateX(5px);
+    transform: translateX(6px);
+    box-shadow: 0px 4px 14px rgba(0,0,0,0.15);
+    border-color: var(--blue);
 }
 
-.card-title {
-    font-size: 1.2rem;
-    color: var(--primary-color);
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    border-top: 1px solid #ccc;
+    padding: 12px;
+    text-align: center;
 }
 
-.card-desc {
-    font-size: 0.9rem;
-    color: var(--accent-color);
+.bottom-nav a {
+    margin: 0 20px;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.bottom-nav a:hover {
+    color: var(--dark-blue);
+}
+
+/* Search bar */
+.search-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: var(--radius);
+    border: 1px solid #c7c7c7;
+}
+
+/* Contact Form */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+    margin: 10px 0;
+}
+
+.contact-form button {
+    width: 100%;
+    background: var(--blue);
+    color: white;
+    border: none;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: var(--dark-blue);
 }

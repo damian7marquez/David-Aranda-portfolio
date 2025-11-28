@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>David Aranda — Portfolio</title>
+
+    <!-- LinkedIn Theme Stylesheet -->
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Typing Animation -->
     <style>
         .typing-container {
-            font-size: 1.3rem;
-            color: var(--primary-color);
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+            font-weight: bold;
             white-space: nowrap;
-            border-right: 2px solid var(--primary-color);
-            width: 0;
             overflow: hidden;
+            border-right: 2px solid var(--dark-blue);
+            width: 0;
             animation: typing 3s steps(40, end) forwards,
-                       blink 0.8s infinite;
-            margin-bottom: 30px;
+                       blink 0.7s infinite;
+            margin-bottom: 10px;
         }
 
         @keyframes typing {
@@ -29,25 +34,49 @@
 </head>
 
 <body>
-<div class="terminal">
 
-    <div class="header">
-        <div class="typing-container">
-            > David Aranda — Electrical Engineering Student
-        </div>
+<div class="container">
 
-        <p class="tagline">
-            > Embedded Systems • Electronics • PCB Design
+    <!-- Typing Title -->
+    <div class="typing-container">
+        > David Aranda — Electrical Engineering Student
+    </div>
+
+    <!-- Tagline -->
+    <p class="tagline">
+        Embedded Systems • Electronics • PCB Design
+    </p>
+
+
+    <!-- About Me -->
+    <div class="section">
+        <h3>About Me</h3>
+        <p>
+            I am an Electrical Engineering student focusing on embedded systems, electronics, PCB design,
+            and low-level programming. This site documents my engineering projects, prototypes, and
+            hands-on builds.
         </p>
     </div>
 
-    <div class="section">
-        <h3>> About Me</h3>
-        <p>I am an Electrical Engineering student focusing on embedded systems, electronics, PCB design, and low-level programming. This site documents my engineering projects, prototypes, and long-term builds.</p>
-    </div>
+    <!-- Search Bar -->
+    <input type="text" id="searchBar" placeholder="Search projects…" class="search-input">
 
+    <script>
+        const searchBar = document.getElementById('searchBar');
+        searchBar.addEventListener('keyup', function () {
+            let value = searchBar.value.toLowerCase();
+            document.querySelectorAll('.card').forEach(card => {
+                card.style.display = card.innerText.toLowerCase().includes(value)
+                    ? "block"
+                    : "none";
+            });
+        });
+    </script>
+
+
+    <!-- Project Categories -->
     <div class="section">
-        <h3>> Project Categories</h3>
+        <h3>Project Categories</h3>
 
         <a class="card" href="embedded.html">
             <span class="card-title">Embedded Systems</span>
@@ -71,6 +100,14 @@
     </div>
 
 </div>
+
+<!-- Bottom Navigation -->
+<footer class="bottom-nav">
+    <a href="index.html">Home</a>
+    <a href="timeline.html">Projects</a>
+    <a href="contact.html">Contact</a>
+</footer>
+
 </body>
 </html>
 
