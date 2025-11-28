@@ -1,0 +1,94 @@
+/* =======================================
+   MIXED RETRO TERMINAL THEME (Purple + Neon)
+=========================================== */
+
+:root {
+    /* Background + glow */
+    --background: #0a0a0f;
+    --grid-color: rgba(0, 255, 180, 0.08);
+
+    /* Mixed retro colors */
+    --primary-color: #9d4bff;   /* Purple */
+    --accent-color: #4BC0C8;    /* Cyan/Blue */
+    --neon-green: #00ff9f;
+
+    /* Text glow */
+    --text-glow: 0 0 7px #9d4bff, 0 0 12px #4BC0C8;
+
+    --card-bg: #111;
+    --card-border: #333;
+    --font-main: 'Courier New', monospace;
+}
+
+/* =======================================
+   GLOBAL + BACKGROUND GRID
+=========================================== */
+
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background: var(--background);
+    color: var(--accent-color);
+
+    /* Subtle PCB/terminal grid */
+    background-image:
+        linear-gradient(var(--grid-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+    background-size: 22px 22px;
+}
+
+.terminal {
+    max-width: 900px;
+    margin: auto;
+    padding: 35px;
+}
+
+/* Headers */
+h1, h2, h3 {
+    color: var(--primary-color);
+    text-shadow: var(--text-glow);
+}
+
+.tagline {
+    color: var(--neon-green);
+    margin-top: -10px;
+    margin-bottom: 20px;
+}
+
+/* Section spacing */
+.section {
+    margin-top: 40px;
+}
+
+/* =======================================
+   PROJECT CARDS
+=========================================== */
+
+.card {
+    display: block;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--accent-color);
+    transition: 0.2s;
+}
+
+.card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 15px var(--primary-color);
+    transform: translateX(5px);
+}
+
+.card-title {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-shadow: var(--text-glow);
+}
+
+.card-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
