@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>David Aranda — Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Typing Animation -->
+    <style>
+        .typing-container {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            white-space: nowrap;
+            border-right: 2px solid var(--primary-color);
+            width: 0;
+            overflow: hidden;
+            animation: typing 3s steps(40, end) forwards,
+                       blink 0.8s infinite;
+            margin-bottom: 30px;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 480px; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+    </style>
+
+</head>
+
+<body>
+<div class="terminal">
+
+    <div class="header">
+
+        <div class="typing-container">
+            > David Aranda — Electrical Engineering Student
+        </div>
+
+        <p class="tagline">
+            > Embedded Systems • Electronics • PCB Design
+        </p>
+
+    </div>
+
+
+    <div class="section">
+        <h3>> About Me</h3>
+        <p>I am an Electrical Engineering student focusing on embedded systems, electronics, PCB design, and low-level programming. This site documents my engineering projects, prototypes, and long-term builds.</p>
+    </div>
+
+    <div class="section">
+        <h3>> Project Categories</h3>
+
+        <a class="card" href="embedded.html">
+            <span class="card-title">Embedded Systems</span>
+            <span class="card-desc">Microcontrollers, C firmware, ESP32, STM32</span>
+        </a>
+
+        <a class="card" href="electronics.html">
+            <span class="card-title">Electronics</span>
+            <span class="card-desc">Circuits, sensors, power systems</span>
+        </a>
+
+        <a class="card" href="pcb.html">
+            <span class="card-title">PCB Design</span>
+            <span class="card-desc">KiCad boards, routing, layout</span>
+        </a>
+
+        <a class="card" href="timeline.html">
+            <span class="card-title">Project Timeline</span>
+            <span class="card-desc">Reverse-chronological showcase</span>
+        </a>
+    </div>
+
+</div>
+</body>
+</html>
