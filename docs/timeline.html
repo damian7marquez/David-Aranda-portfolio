@@ -4,129 +4,37 @@
     <meta charset="UTF-8">
     <title>Project Timeline — David Aranda</title>
     <link rel="stylesheet" href="assets/css/style.css">
-
-    <style>
-        /* Timeline Container */
-        .timeline-container {
-            margin-top: 20px;
-            position: relative;
-        }
-
-        /* Vertical Timeline Line */
-        .timeline-line {
-            position: absolute;
-            left: 25px;
-            width: 4px;
-            background: var(--blue);
-            top: 0;
-            bottom: 0;
-            border-radius: 4px;
-        }
-
-        /* Each Entry */
-        .timeline-entry {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 40px;
-        }
-
-        /* Blue Circle Marker */
-        .timeline-entry::before {
-            content: "";
-            position: absolute;
-            left: 15px;
-            top: 6px;
-            width: 18px;
-            height: 18px;
-            background: white;
-            border: 3px solid var(--blue);
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(0,0,0,0.15);
-        }
-
-        /* Entry Card */
-        .timeline-card {
-            background: white;
-            padding: 15px;
-            border-radius: var(--radius);
-            border: 1px solid #ddd;
-            display: block;
-            text-decoration: none;
-            color: var(--text-dark);
-            box-shadow: var(--shadow-light);
-            transition: var(--transition);
-        }
-
-        .timeline-card:hover {
-            transform: translateX(6px);
-            border-color: var(--blue);
-            box-shadow: var(--shadow);
-        }
-
-        /* Title + Date */
-        .timeline-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--dark-blue);
-        }
-
-        .timeline-date {
-            color: var(--gray-text);
-            font-size: 0.9rem;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        /* Filter Buttons */
-        .filter-buttons {
-            margin-bottom: 25px;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 8px 16px;
-            background: white;
-            border: 1px solid var(--blue);
-            border-radius: 8px;
-            color: var(--blue);
-            font-weight: 600;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--blue);
-            color: white;
-        }
-
-    </style>
 </head>
 
 <body>
 
-<div class="page-content">
-    <div class="container">
+<div class="container page-content">
 
-        <h1>Project Timeline</h1>
-        <p class="tagline">A clean chronological history of my engineering projects.</p>
+    <h1>Project Timeline</h1>
 
-        <!-- FILTER BUTTONS -->
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="embedded">Embedded</button>
-            <button class="filter-btn" data-category="electronics">Electronics</button>
-            <button class="filter-btn" data-category="pcb">PCB</button>
-        </div>
+    <div class="timeline-list">
 
-        <!-- TIMELINE STRUCTURE -->
-        <div class="timeline-container" id="timeline">
-            <div class="timeline-line"></div>
-        </div>
+        <div class="timeline-year">2025</div>
+
+        <a class="card" href="assets/projects/project-template.html">
+            <span class="card-title">ESP32 Weather Station</span>
+            <span class="card-desc">ESP32 • Sensors • IoT</span>
+        </a>
+
+        <div class="timeline-year">2024</div>
+
+        <a class="card" href="assets/projects/project-template.html">
+            <span class="card-title">Motor Driver PCB</span>
+            <span class="card-desc">KiCad • H-Bridge • Routing</span>
+        </a>
+
+        <a class="card" href="assets/projects/project-template.html">
+            <span class="card-title">STM32 Data Logger</span>
+            <span class="card-desc">SD Card • ADC • C</span>
+        </a>
 
     </div>
+
 </div>
 
 <footer class="bottom-nav">
@@ -134,93 +42,6 @@
     <a href="timeline.html">Projects</a>
     <a href="contact.html">Contact</a>
 </footer>
-
-
-<!-- =============================
-     PROJECT LIST (EDIT THIS PART)
-============================== -->
-<script>
-const projects = [
-
-    {
-        title: "Example Embedded Project",
-        date: "2025-01-10",
-        category: "embedded",
-        link: "assets/projects/project-template.html"
-    },
-
-    {
-        title: "Power Converter PCB",
-        date: "2024-12-01",
-        category: "pcb",
-        link: "assets/projects/project-template.html"
-    },
-
-    {
-        title: "Analog Sensor Interface",
-        date: "2024-10-15",
-        category: "electronics",
-        link: "assets/projects/project-template.html"
-    }
-
-    // Add more projects here:
-    /*
-    {
-        title: "YOUR PROJECT NAME",
-        date: "2025-02-14",  // YYYY-MM-DD
-        category: "embedded" | "electronics" | "pcb",
-        link: "assets/projects/YOUR_FILE.html"
-    }
-    */
-
-];
-</script>
-
-
-<!-- =============================
-     TIMELINE RENDERING LOGIC
-============================== -->
-<script>
-function renderTimeline(filter = "all") {
-
-    const timeline = document.getElementById("timeline");
-    timeline.innerHTML = '<div class="timeline-line"></div>';
-
-    // newest → oldest
-    const sorted = projects.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    sorted.forEach(proj => {
-
-        if (filter !== "all" && proj.category !== filter) return;
-
-        const entry = document.createElement("div");
-        entry.classList.add("timeline-entry");
-
-        entry.innerHTML = `
-            <a class="timeline-card" href="${proj.link}">
-                <span class="timeline-date">${new Date(proj.date).toDateString()}</span>
-                <span class="timeline-title">${proj.title}</span>
-            </a>
-        `;
-
-        timeline.appendChild(entry);
-    });
-}
-
-// Filter button logic
-document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        renderTimeline(btn.dataset.category);
-    });
-});
-
-// First render
-renderTimeline();
-</script>
 
 </body>
 </html>
