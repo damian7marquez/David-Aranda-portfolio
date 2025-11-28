@@ -17,9 +17,8 @@
     --transition: 0.25s ease;
 }
 
-
 /* =======================================
-   GLOBAL PAGE STYLES
+   GLOBAL STYLES
 ========================================== */
 
 body {
@@ -29,15 +28,17 @@ body {
     color: var(--text-dark);
 }
 
-.container {
+.container, .terminal, .page-content {
     max-width: 900px;
     margin: auto;
     padding: 20px;
+    padding-bottom: 120px; /* space for bottom nav */
 }
 
 h1, h2, h3 {
     color: var(--dark-blue);
     margin-bottom: 8px;
+    font-weight: 700;
 }
 
 p {
@@ -45,9 +46,8 @@ p {
     line-height: 1.5rem;
 }
 
-
 /* =======================================
-   TOP NAVIGATION BAR
+   TOP NAVIGATION (HOME PAGE ONLY)
 ========================================== */
 
 .top-nav {
@@ -64,7 +64,6 @@ p {
     z-index: 100;
 }
 
-/* Left side (Logo + Name) */
 .nav-left {
     display: flex;
     align-items: center;
@@ -89,7 +88,6 @@ p {
     color: var(--dark-blue);
 }
 
-/* Right side links */
 .nav-right a {
     margin-left: 20px;
     text-decoration: none;
@@ -102,22 +100,34 @@ p {
     color: var(--dark-blue);
 }
 
-
 /* =======================================
-   HERO SECTION
+   TYPING ANIMATION — FIXED
 ========================================== */
 
-.hero {
-    padding-top: 60px;
-    padding-bottom: 20px;
+.typing-container {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--dark-blue);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid var(--blue);
+    animation: typing 3s steps(40, end) forwards,
+               blink 0.6s step-end infinite;
 }
 
-.tagline {
-    font-size: 1.1rem;
-    color: var(--blue);
-    margin-top: 10px;
+.typing-container.finished {
+    border-right: none;
+    animation: none;
 }
 
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
 
 /* =======================================
    SEARCH BAR
@@ -138,7 +148,6 @@ p {
     border-color: var(--blue);
     box-shadow: 0px 0px 4px rgba(10,102,194,0.3);
 }
-
 
 /* =======================================
    PROJECT CARDS
@@ -176,7 +185,6 @@ p {
     color: var(--gray-text);
     font-size: 0.95rem;
 }
-
 
 /* =======================================
    CONTACT FORM
@@ -216,9 +224,8 @@ p {
     background: var(--dark-blue);
 }
 
-
 /* =======================================
-   BOTTOM NAVIGATION
+   BOTTOM NAVIGATION — FIXED ON ALL PAGES
 ========================================== */
 
 .bottom-nav {
@@ -231,6 +238,7 @@ p {
     bottom: 0;
     left: 0;
     box-shadow: var(--shadow-light);
+    z-index: 99;
 }
 
 .bottom-nav a {
@@ -245,9 +253,8 @@ p {
     color: var(--dark-blue);
 }
 
-
 /* =======================================
-   RESPONSIVE (PHONE)
+   RESPONSIVE FIXES
 ========================================== */
 
 @media (max-width: 600px) {
@@ -265,7 +272,7 @@ p {
     }
 
     .typing-container {
-        font-size: 1.6rem !important;
+        font-size: 1.5rem !important;
     }
 
     .card {
@@ -276,7 +283,3 @@ p {
         font-size: 0.9rem;
     }
 }
-.page-content {
-    padding-bottom: 100px; /* space for bottom nav */
-}
-
