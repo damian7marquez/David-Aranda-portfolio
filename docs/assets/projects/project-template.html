@@ -2,102 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Project Timeline — David Aranda</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Project Template — David Aranda</title>
+    <link rel="stylesheet" href="../css/style.css">
 
     <style>
-        /* Timeline Container */
-        .timeline-container {
-            margin-top: 20px;
+        .project-header {
+            margin-bottom: 25px;
         }
 
-        /* Filter Buttons */
-        .filter-buttons {
-            margin-bottom: 25px;
+        .project-title {
+            font-size: 2rem;
+            color: var(--dark-blue);
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .project-date {
+            color: var(--gray-text);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .project-tags span {
+            background: var(--blue);
+            color: white;
+            padding: 6px 10px;
+            border-radius: 8px;
+            margin-right: 8px;
+            font-size: 0.85rem;
+        }
+
+        /* Image Gallery */
+        .gallery {
+            margin: 20px 0;
             display: flex;
-            gap: 12px;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
-        .filter-btn {
-            padding: 8px 16px;
-            background: var(--white);
-            border: 1px solid var(--blue);
-            border-radius: 8px;
-            color: var(--blue);
-            font-weight: bold;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--blue);
-            color: white;
-        }
-
-        /* Timeline Line */
-        .timeline-line {
-            position: absolute;
-            left: 25px;
-            width: 4px;
-            background: var(--blue);
-            top: 0;
-            bottom: 0;
-            border-radius: 4px;
-        }
-
-        /* Each Entry */
-        .timeline-entry {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 35px;
-        }
-
-        /* Marker */
-        .timeline-entry::before {
-            content: "";
-            position: absolute;
-            left: 15px;
-            top: 8px;
-            width: 18px;
-            height: 18px;
-            background: var(--white);
-            border: 3px solid var(--blue);
-            border-radius: 50%;
-            box-shadow: 0 0 8px rgba(0,0,0,0.15);
-        }
-
-        /* Entry Card */
-        .timeline-card {
-            background: var(--white);
-            padding: 15px;
+        .gallery img {
+            width: 300px;
             border-radius: var(--radius);
             border: 1px solid #ddd;
             box-shadow: var(--shadow-light);
-            transition: var(--transition);
-            text-decoration: none;
-            color: var(--text-dark);
-            display: block;
         }
 
-        .timeline-card:hover {
-            transform: translateX(6px);
-            border-color: var(--blue);
-            box-shadow: var(--shadow);
-        }
-
-        .timeline-title {
-            font-size: 1.2rem;
-            font-weight: 700;
+        /* Section headers */
+        h3 {
+            margin-top: 30px;
             color: var(--dark-blue);
         }
 
-        .timeline-date {
-            color: var(--gray-text);
-            margin-bottom: 5px;
-            display: block;
-            font-size: 0.9rem;
+        /* Back Button */
+        .back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 18px;
+            background: var(--blue);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius);
+            font-weight: bold;
+            transition: var(--transition);
+        }
+
+        .back-btn:hover {
+            background: var(--dark-blue);
         }
     </style>
 </head>
@@ -107,107 +77,65 @@
 <div class="page-content">
     <div class="container">
 
-        <h1>Project Timeline</h1>
-        <p class="tagline">
-            A clean, auto-sorted engineering project history
+        <!-- ===== PROJECT HEADER ===== -->
+        <div class="project-header">
+            <div class="project-title">Project Title Here</div>
+
+            <span class="project-date">January 10, 2025</span>
+
+            <div class="project-tags">
+                <span>ESP32</span>
+                <span>C Programming</span>
+                <span>KiCad</span>
+                <!-- Add more tags as needed -->
+            </div>
+        </div>
+
+        <!-- ===== PROJECT DESCRIPTION ===== -->
+        <h3>Description</h3>
+        <p>
+            Write a strong paragraph about what the project does, why you built it,
+            what skills you used, and the final outcome. 
         </p>
 
-        <!-- FILTER BUTTONS -->
-        <div class="filter-buttons">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="embedded">Embedded</button>
-            <button class="filter-btn" data-category="electronics">Electronics</button>
-            <button class="filter-btn" data-category="pcb">PCB</button>
+        <!-- ===== IMAGE GALLERY ===== -->
+        <h3>Images</h3>
+        <div class="gallery">
+            <img src="pic1.jpg" alt="Project Image 1">
+            <img src="pic2.jpg" alt="Project Image 2">
+            <!-- Add more images as needed -->
         </div>
 
-        <!-- TIMELINE STRUCTURE -->
-        <div class="timeline-container" id="timeline">
-            <div class="timeline-line"></div>
-        </div>
+        <!-- ===== SECTIONS ===== -->
+        <h3>Goals</h3>
+        <ul>
+            <li>Explain your objectives and what you wanted to learn.</li>
+            <li>Describe your engineering focus (firmware, PCB, analog, etc.)</li>
+        </ul>
+
+        <h3>Challenges</h3>
+        <ul>
+            <li>Explain problems you ran into and how you solved them.</li>
+            <li>Talk about debugging, design decisions, constraints, etc.</li>
+        </ul>
+
+        <h3>Lessons Learned</h3>
+        <ul>
+            <li>What you learned from the project.</li>
+            <li>What you would improve in the next revision.</li>
+        </ul>
+
+        <!-- BACK BUTTON -->
+        <a href="../../timeline.html" class="back-btn">← Back to Timeline</a>
 
     </div>
 </div>
 
 <footer class="bottom-nav">
-    <a href="index.html">Home</a>
-    <a href="timeline.html">Projects</a>
-    <a href="contact.html">Contact</a>
+    <a href="../../index.html">Home</a>
+    <a href="../../timeline.html">Projects</a>
+    <a href="../../contact.html">Contact</a>
 </footer>
-
-<!-- =============================
-     PROJECT LIST (EDIT THIS)
-============================== -->
-<script>
-const projects = [
-
-    {
-        title: "Example Embedded Project",
-        date: "2025-01-10",
-        category: "embedded",
-        link: "assets/projects/project-template.html"
-    },
-    {
-        title: "Power Converter Board",
-        date: "2024-12-01",
-        category: "pcb",
-        link: "assets/projects/project-template.html"
-    },
-    {
-        title: "Analog Sensor Interface",
-        date: "2024-10-15",
-        category: "electronics",
-        link: "assets/projects/project-template.html"
-    }
-
-];
-</script>
-
-<!-- =============================
-     RENDER TIMELINE (JS LOGIC)
-============================== -->
-<script>
-function renderTimeline(filter = "all") {
-
-    const timeline = document.getElementById("timeline");
-    timeline.innerHTML = '<div class="timeline-line"></div>';
-
-    // Auto-sort newest → oldest
-    const sorted = projects.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-    sorted.forEach(proj => {
-
-        if (filter !== "all" && proj.category !== filter) return;
-
-        const entry = document.createElement("div");
-        entry.classList.add("timeline-entry");
-
-        entry.innerHTML = `
-            <a class="timeline-card" href="${proj.link}">
-                <span class="timeline-date">${new Date(proj.date).toDateString()}</span>
-                <span class="timeline-title">${proj.title}</span>
-            </a>
-        `;
-
-        timeline.appendChild(entry);
-    });
-}
-
-// =============================
-// FILTER BUTTON LOGIC
-// =============================
-document.querySelectorAll(".filter-btn").forEach(btn => {
-    btn.addEventListener("click", () => {
-
-        document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
-
-        renderTimeline(btn.dataset.category);
-    });
-});
-
-// INITIAL RENDER
-renderTimeline();
-</script>
 
 </body>
 </html>
