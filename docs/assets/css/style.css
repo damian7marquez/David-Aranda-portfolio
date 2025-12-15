@@ -1,285 +1,165 @@
-/* =======================================
-   LINKEDIN BLUE PORTFOLIO THEME — DAVID ARANDA
-========================================== */
-
-:root {
-    --blue: #0A66C2;            /* LinkedIn Blue */
-    --dark-blue: #004182;       /* Darker Blue */
-    --light-bg: #F3F2EF;        /* Neutral Background */
-    --white: #ffffff;
-    --gray-text: #555;
-    --text-dark: #1A1A1A;
-
-    --radius: 12px;
-    --shadow: 0px 4px 12px rgba(0,0,0,0.1);
-    --shadow-light: 0px 2px 6px rgba(0,0,0,0.06);
-
-    --transition: 0.25s ease;
-}
-
-/* =======================================
-   GLOBAL STYLES
-========================================== */
-
-body {
+/* ===============================
+   GLOBAL RESET
+================================ */
+* {
     margin: 0;
-    background: var(--light-bg);
-    font-family: "Segoe UI", sans-serif;
-    color: var(--text-dark);
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container, .terminal, .page-content {
+/* ===============================
+   BASE STYLES
+================================ */
+body {
+    font-family: "Courier New", monospace;
+    background-color: #0f1117;
+    color: #e6e6e6;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ===============================
+   TERMINAL CONTAINER
+================================ */
+.terminal {
     max-width: 900px;
-    margin: auto;
-    padding: 20px;
-    padding-bottom: 120px; /* space for bottom nav */
+    margin: 40px auto;
+    padding: 30px;
+    background: #151922;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 255, 170, 0.1);
 }
 
+/* ===============================
+   HEADINGS
+================================ */
 h1, h2, h3 {
-    color: var(--dark-blue);
-    margin-bottom: 8px;
-    font-weight: 700;
+    color: #00ffae;
+    margin-bottom: 15px;
 }
 
 p {
-    font-size: 1rem;
-    line-height: 1.5rem;
+    margin-bottom: 15px;
 }
 
-/* =======================================
-   TOP NAVIGATION (HOME PAGE ONLY)
-========================================== */
-
-.top-nav {
+/* ===============================
+   NAV BAR (BIGGER BUTTONS)
+================================ */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
     width: 100%;
-    background: var(--white);
-    border-bottom: 1px solid #ddd;
-    padding: 12px 30px;
+    background: #0b0e14;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    box-shadow: var(--shadow-light);
-    z-index: 100;
-}
-
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo {
-    width: 34px;
-    height: 34px;
-    background: var(--blue);
-    color: white;
-    border-radius: 50%;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 25px;
+    padding: 18px 0;
+    border-top: 1px solid #1f2533;
 }
 
-.nav-name {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--dark-blue);
+.bottom-nav a {
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: #151922;
+    color: #00ffae;
+    transition: all 0.25s ease;
 }
 
-.nav-right a {
-    margin-left: 20px;
-    text-decoration: none;
-    color: var(--blue);
-    font-weight: 600;
-    transition: var(--transition);
+.bottom-nav a:hover {
+    background: #00ffae;
+    color: #0f1117;
 }
 
-.nav-right a:hover {
-    color: var(--dark-blue);
-}
-
-/* =======================================
-   TYPING ANIMATION — FIXED
-========================================== */
-
-.typing-container {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--dark-blue);
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid var(--blue);
-    animation: typing 3s steps(40, end) forwards,
-               blink 0.6s step-end infinite;
-}
-
-.typing-container.finished {
-    border-right: none;
-    animation: none;
-}
-
-@keyframes typing {
-    from { width: 0; }
-    to { width: 100%; }
-}
-
-@keyframes blink {
-    50% { border-color: transparent; }
-}
-
-/* =======================================
-   SEARCH BAR
-========================================== */
-
-.search-input {
-    width: 100%;
-    padding: 14px;
-    border-radius: var(--radius);
-    border: 1px solid #c7c7c7;
-    margin-top: 15px;
-    margin-bottom: 25px;
-    font-size: 1rem;
-    outline: none;
-}
-
-.search-input:focus {
-    border-color: var(--blue);
-    box-shadow: 0px 0px 4px rgba(10,102,194,0.3);
-}
-
-/* =======================================
+/* ===============================
    PROJECT CARDS
-========================================== */
+================================ */
+.section {
+    margin-top: 30px;
+}
 
 .card {
     display: block;
-    background: var(--white);
-    padding: 18px;
-    border-radius: var(--radius);
-    border: 1px solid #ddd;
-    margin: 14px 0;
-    text-decoration: none;
-    color: var(--text-dark);
-    box-shadow: var(--shadow-light);
-    transition: var(--transition);
+    padding: 20px;
+    border-radius: 10px;
+    background: #10141d;
+    border-left: 5px solid #00ffae;
+    margin-bottom: 15px;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 .card:hover {
     transform: translateX(6px);
-    border-color: var(--blue);
-    box-shadow: var(--shadow);
+    background: #151b28;
 }
 
 .card-title {
+    font-size: 18px;
+    font-weight: bold;
     display: block;
-    font-size: 1.2rem;
-    color: var(--dark-blue);
-    font-weight: 600;
 }
 
 .card-desc {
+    font-size: 14px;
+    color: #b5b5b5;
+}
+
+/* ===============================
+   PROJECT PAGE CONTENT
+================================ */
+.project-meta {
+    margin: 20px 0;
+    padding: 15px;
+    background: #0f141f;
+    border-radius: 8px;
+    border-left: 4px solid #00ffae;
+}
+
+.project-meta ul {
+    list-style: none;
+}
+
+.project-meta li {
+    margin-bottom: 6px;
+}
+
+/* ===============================
+   CODE BLOCK
+================================ */
+pre {
+    background: #0b0e14;
+    padding: 18px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin: 20px 0;
+    border: 1px solid #1f2533;
+}
+
+code {
+    color: #00ffae;
+    font-size: 14px;
+}
+
+/* ===============================
+   PROJECT IMAGE
+================================ */
+.project-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin: 20px 0;
+    border: 1px solid #1f2533;
+}
+
+/* ===============================
+   FOOTER SPACING FIX
+================================ */
+body::after {
+    content: "";
     display: block;
-    margin-top: 6px;
-    color: var(--gray-text);
-    font-size: 0.95rem;
-}
-
-/* =======================================
-   CONTACT FORM
-========================================== */
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    border-radius: var(--radius);
-    border: 1px solid #ccc;
-    margin: 10px 0;
-    font-size: 1rem;
-    outline: none;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--blue);
-    box-shadow: 0px 0px 5px rgba(10,102,194,0.2);
-}
-
-.contact-form button {
-    width: 100%;
-    background: var(--blue);
-    border: none;
-    margin-top: 10px;
-    padding: 14px;
-    border-radius: var(--radius);
-    color: white;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.contact-form button:hover {
-    background: var(--dark-blue);
-}
-
-/* =======================================
-   BOTTOM NAVIGATION — FIXED ON ALL PAGES
-========================================== */
-
-.bottom-nav {
-    width: 100%;
-    background: var(--white);
-    border-top: 1px solid #ccc;
-    text-align: center;
-    padding: 14px 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    box-shadow: var(--shadow-light);
-    z-index: 99;
-}
-
-.bottom-nav a {
-    margin: 0 20px;
-    text-decoration: none;
-    color: var(--blue);
-    font-weight: bold;
-    transition: var(--transition);
-}
-
-.bottom-nav a:hover {
-    color: var(--dark-blue);
-}
-
-/* =======================================
-   RESPONSIVE FIXES
-========================================== */
-
-@media (max-width: 600px) {
-    .top-nav {
-        padding: 10px 15px;
-    }
-
-    .nav-right a {
-        margin-left: 12px;
-    }
-
-    .logo {
-        width: 30px;
-        height: 30px;
-    }
-
-    .typing-container {
-        font-size: 1.5rem !important;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    .bottom-nav {
-        font-size: 0.9rem;
-    }
+    height: 90px;
 }
