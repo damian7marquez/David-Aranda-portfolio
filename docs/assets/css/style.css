@@ -1,165 +1,207 @@
-/* ===============================
-   GLOBAL RESET
-================================ */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* =======================================
+   LINKEDIN BLUE + WHITE THEME (CLEAN)
+======================================= */
+
+:root {
+    --blue: #0A66C2;
+    --dark-blue: #004182;
+    --light-bg: #F3F2EF;
+    --white: #ffffff;
+    --gray-text: #555;
+    --text-dark: #1A1A1A;
+
+    --radius: 12px;
+    --shadow: 0px 4px 12px rgba(0,0,0,0.1);
+    --shadow-light: 0px 2px 6px rgba(0,0,0,0.06);
+    --transition: 0.25s ease;
 }
 
-/* ===============================
-   BASE STYLES
-================================ */
+/* =======================================
+   GLOBAL
+======================================= */
+
 body {
-    font-family: "Courier New", monospace;
-    background-color: #0f1117;
-    color: #e6e6e6;
-    line-height: 1.6;
+    margin: 0;
+    background: var(--light-bg);
+    font-family: "Segoe UI", sans-serif;
+    color: var(--text-dark);
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ===============================
-   TERMINAL CONTAINER
-================================ */
+.container,
 .terminal {
     max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background: #151922;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(0, 255, 170, 0.1);
+    margin: auto;
+    padding: 20px;
+    padding-bottom: 120px; /* space for bottom nav */
 }
 
-/* ===============================
-   HEADINGS
-================================ */
 h1, h2, h3 {
-    color: #00ffae;
-    margin-bottom: 15px;
+    color: var(--dark-blue);
+    margin-bottom: 8px;
 }
 
 p {
-    margin-bottom: 15px;
+    font-size: 1rem;
+    line-height: 1.6rem;
 }
 
-/* ===============================
-   NAV BAR (BIGGER BUTTONS)
-================================ */
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background: #0b0e14;
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    padding: 18px 0;
-    border-top: 1px solid #1f2533;
+/* =======================================
+   TYPING HEADER (HOME PAGE)
+======================================= */
+
+.typing-container {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--blue);
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid var(--blue);
+    width: fit-content;
+    animation: typing 3s steps(40, end) forwards,
+               blink 0.8s step-end infinite;
+    margin-bottom: 20px;
 }
 
-.bottom-nav a {
-    padding: 12px 28px;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 10px;
-    background: #151922;
-    color: #00ffae;
-    transition: all 0.25s ease;
+@keyframes typing {
+    from { max-width: 0; }
+    to { max-width: 100%; }
 }
 
-.bottom-nav a:hover {
-    background: #00ffae;
-    color: #0f1117;
+@keyframes blink {
+    50% { border-color: transparent; }
 }
 
-/* ===============================
-   PROJECT CARDS
-================================ */
+/* =======================================
+   TAGLINE
+======================================= */
+
+.tagline {
+    color: var(--gray-text);
+    font-size: 1.05rem;
+}
+
+/* =======================================
+   SECTIONS
+======================================= */
+
 .section {
-    margin-top: 30px;
+    margin-top: 40px;
 }
+
+.section h3 {
+    color: var(--dark-blue);
+}
+
+/* =======================================
+   CARDS
+======================================= */
 
 .card {
     display: block;
-    padding: 20px;
-    border-radius: 10px;
-    background: #10141d;
-    border-left: 5px solid #00ffae;
-    margin-bottom: 15px;
-    transition: transform 0.2s ease, background 0.2s ease;
+    background: var(--white);
+    padding: 18px;
+    border-radius: var(--radius);
+    border: 1px solid #ddd;
+    margin: 14px 0;
+    text-decoration: none;
+    color: var(--text-dark);
+    box-shadow: var(--shadow-light);
+    transition: var(--transition);
 }
 
 .card:hover {
     transform: translateX(6px);
-    background: #151b28;
+    border-color: var(--blue);
+    box-shadow: var(--shadow);
 }
 
 .card-title {
-    font-size: 18px;
-    font-weight: bold;
     display: block;
+    font-size: 1.15rem;
+    color: var(--dark-blue);
+    font-weight: 600;
 }
 
 .card-desc {
-    font-size: 14px;
-    color: #b5b5b5;
-}
-
-/* ===============================
-   PROJECT PAGE CONTENT
-================================ */
-.project-meta {
-    margin: 20px 0;
-    padding: 15px;
-    background: #0f141f;
-    border-radius: 8px;
-    border-left: 4px solid #00ffae;
-}
-
-.project-meta ul {
-    list-style: none;
-}
-
-.project-meta li {
-    margin-bottom: 6px;
-}
-
-/* ===============================
-   CODE BLOCK
-================================ */
-pre {
-    background: #0b0e14;
-    padding: 18px;
-    border-radius: 10px;
-    overflow-x: auto;
-    margin: 20px 0;
-    border: 1px solid #1f2533;
-}
-
-code {
-    color: #00ffae;
-    font-size: 14px;
-}
-
-/* ===============================
-   PROJECT IMAGE
-================================ */
-.project-image {
-    max-width: 100%;
-    border-radius: 10px;
-    margin: 20px 0;
-    border: 1px solid #1f2533;
-}
-
-/* ===============================
-   FOOTER SPACING FIX
-================================ */
-body::after {
-    content: "";
     display: block;
-    height: 90px;
+    margin-top: 6px;
+    color: var(--gray-text);
+    font-size: 0.95rem;
+}
+
+/* =======================================
+   CONTACT FORM
+======================================= */
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius);
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.contact-form button {
+    width: 100%;
+    background: var(--blue);
+    border: none;
+    padding: 14px;
+    border-radius: var(--radius);
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background: var(--dark-blue);
+}
+
+/* =======================================
+   BOTTOM NAV (BIGGER BUTTONS)
+======================================= */
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--white);
+    border-top: 1px solid #ccc;
+    text-align: center;
+    padding: 18px 0;
+    box-shadow: var(--shadow-light);
+}
+
+.bottom-nav a {
+    margin: 0 26px;
+    text-decoration: none;
+    color: var(--blue);
+    font-weight: 700;
+    font-size: 1.1rem;      /* BIGGER TEXT */
+    padding: 10px 18px;     /* BIGGER CLICK AREA */
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.bottom-nav a:hover {
+    background: rgba(10, 102, 194, 0.08);
+    color: var(--dark-blue);
+}
+
+/* =======================================
+   MOBILE
+======================================= */
+
+@media (max-width: 600px) {
+    .typing-container {
+        font-size: 1.2rem;
+    }
+
+    .bottom-nav a {
+        margin: 0 14px;
+        font-size: 1rem;
+        padding: 10px 14px;
+    }
 }
